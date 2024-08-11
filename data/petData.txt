@@ -1,16 +1,1 @@
-1:Tony:Dog:sdfasd:4-7:Female:yes:yes:sdasd
-2:ejay:Dog:2342:7-10:No preference:no:yes:.mkl,m
-3:Tony:Dog:23:4-7:Male:undefined:undefined:
-4:Bob:Dog:sex:4-7:Male:yes:yes:yes
-5:Bob:Dog:sex:4-7:Male:yes:yes:yes
-6:Bob:Dog:sex:4-7:Male:yes:yes:yes
-7:cat:Cat:sex:4-7:Male:yes:yes:yes
-8:Tony:Cat:sex:7-10:No preference:yes:yes:zsad
-9:Tony:Cat:Bobcat:10+:Male:undefined:no:a
-10:Tony:Cat:BobSex:7-10:Female:yes:yes:no thank u
-11:Tony:Cat:bob:7-10:Male:yes:yes:232
-12:Tony:Cat:asdas:4-7:Female:yes:yes:
-13:Tony:Dog:asdasd:7-10:Female:yes:yes:
-14:Tony:Dog:asd:10+:Female:no:yes:
-15:Tony:Cat:asda:0-1:Female:yes:yes:
-16:erfan:Cat:pony:7-10:Female:yes:yes:
+
