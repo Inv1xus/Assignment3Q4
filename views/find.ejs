@@ -1,0 +1,81 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-0 px-0 mb-0 pt-4 mt-5">
+    <div class="px-5 py-5 my-5 text-center">
+        <form id="search" action="/find" method="POST">
+            <fieldset class="border p-4 rounded mb-4">
+                <legend class="fw-bold">Search for a Specific Pet</legend>
+    
+                <div class="mb-3">
+                    <label class="form-label">Pet Type:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="PetType" id="petTypeDog" value="Dog">
+                        <label class="form-check-label" for="petTypeDog">Dog</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="PetType" id="petTypeCat" value="Cat">
+                        <label class="form-check-label" for="petTypeCat">Cat</label>
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="breed" class="form-label">Breed Type:</label>
+                    <input type="text" class="form-control" name="breed" id="breed" onchange="toggleCheckbox('breedNoPref')">
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" name="breedNoPref" id="breedNoPref" value="No Preference" onchange="toggleInput('breed')">
+                        <label class="form-check-label" for="breedNoPref">No Preference</label>
+                    </div>
+                </div>
+                
+    
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <select id="age" name="age" class="form-select">
+                        <option value="0-1">Less than one year</option>
+                        <option value="1-3">1-3</option>
+                        <option value="4-7">4-7</option>
+                        <option value="7-10">7-10</option>
+                        <option value="10+">More than 10 years</option>
+                        <option value="No preference">No preference</option>
+                    </select>
+                </div>
+                <label class="form-label mt-3">Gender:</label>
+                <div class="mb-3 d-flex justify-content-between flex-wrap">
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
+                        <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male">
+                        <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderNoPref" value="No preference" onchange="disable('noPreferenceBreed')">
+                        <label class="form-check-label" for="genderNoPref">No preference</label>
+                    </div>
+                </div>
+    
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Do you want your pet to be sociable?</label>
+                    <div class="d-flex justify-content-between flex-wrap">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sociable" id="sociableYes" value="yes">
+                        <label class="form-check-label" for="sociableYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sociable" id="sociableNo" value="no">
+                        <label class="form-check-label" for="sociableNo">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sociable" id="sociableNoPref" value="No preference">
+                        <label class="form-check-label" for="sociableNoPref">No preference</label>
+                    </div>
+                </div>
+                </div>
+    
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>

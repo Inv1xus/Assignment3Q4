@@ -1,0 +1,99 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-0 px-0 mb-0 pt-4 mt-5">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Browse Pets </h1>
+                <p class="lead text-body-secondary">Here Are Your Search Results</p>
+              </div>
+            </div>
+          </section>
+
+
+          <div class="album py-5 bg-lightColor">
+            <div class="container bg-lightColor">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+        <% if (pets.length > 0) { %>
+            
+                <% pets.forEach(pet => { %>
+                    <div class="col">
+                        <div class="card shadow-sm">
+
+                            <% if (pet[2]==="Dog"){%>
+                                <img class="img-fluid randDog" src=""  width="100%" height="225%">         
+                            <% }else{ %>
+                                <img class="img-fluid randCat" src=""  width="100%" height="225%">
+                           <% }%>
+                            <div class="card-body">
+
+                        <h5 class="mb-1"><%= pet[2] %> - <b>Breed:</b> <%= pet[3] %></h5>
+                        <p class="mb-1"><b>Age:</b> <%= pet[4] %>, <b>Gender: </b><%= pet[5] %></p>
+                        <p class="mb-1"><b>Sociable: </b><%= pet[6] %>, <b>Suitable for Children:</b> <%= pet[7] %></p>
+                        <p class="mb-1"><b>Owner:</b> <%= pet[1] %></p>
+                        <p class="mb-1"><b>Brag:</b> <%= pet[8] %></p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                <div class="px-5 py-5 my-5 mx-5 text-center bg-lightColor"></div>
+
+        <% } else { %>
+        </div>
+
+    </div>
+    </div>
+
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                  <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">No Pets Found Matching the Criteria </h1>
+                    </div>
+                    </div>
+                    </section>
+
+        <% } %>
+        <script>
+            const dogImages = [
+                "https://images.nightcafe.studio/jobs/foMUvzW5KkKYpLMak9LP/foMUvzW5KkKYpLMak9LP--1--n8e2q.jpg?tr=w-1600,c-at_max",
+                "https://i.pinimg.com/564x/31/54/f0/3154f00d70db8cb6139f5acaea953e7b.jpg",
+                "https://petapixel.com/assets/uploads/2023/02/MARJAN-RADOVIC-DOG-HEROES-13-800x800.jpg",
+                "https://petapixel.com/assets/uploads/2023/02/MARJAN-RADOVIC-DOG-HEROES-12-800x800.jpg",
+                "https://sparkygo.com/wp-content/uploads/2023/01/sand-castle-dog-ai.jpg",
+            "https://www.boredpanda.com/blog/wp-content/uploads/2022/12/I-made-visual-dog-puns-with-an-AI-art-generator-63881c119c954-png__880.jpg",
+                "https://www.syfy.com/sites/syfy/files/styles/amp_featured_image/public/2019/11/courage-the-cowardly-dog.jpg",
+                "https://cdn.pixabay.com/photo/2023/05/28/16/59/ai-generated-8024170_960_720.jpg",
+"https://assets3.thrillist.com/v1/image/3174079/594x595/scale;webp=auto;jpeg_quality=60.jpg",
+              "https://img.freepik.com/premium-photo/mixed-breed-dog-portrait-wearing-sunglasses-orange-background_941600-3795.jpg"
+            ];
+          
+            document.addEventListener('DOMContentLoaded', () => {
+              [...document.getElementsByClassName('randDog')].forEach(e => {
+                const randImageIndex = ~~(Math.random() * dogImages.length);
+                e.src = dogImages[randImageIndex];
+              }); 
+            });
+
+
+            const catImages = ["https://static.vecteezy.com/system/resources/thumbnails/022/963/918/small_2x/ai-generative-cute-cat-isolated-on-solid-background-photo.jpg",
+            "https://i.etsystatic.com/41355720/r/il/e1ed76/4738346497/il_570xN.4738346497_3r4d.jpg",
+            "https://img.freepik.com/free-photo/futuristic-cat-concept_23-2150969567.jpg",
+            "https://i.etsystatic.com/30859058/r/il/2b8005/4472911524/il_570xN.4472911524_m8ig.jpg",
+            "https://cdn.pixabay.com/photo/2023/03/28/13/28/ai-generated-7883147_1280.jpg",
+            "https://images.squarespace-cdn.com/content/v1/5c96943c840b16870d5c01fe/a4f24229-463f-4de8-ab02-77e1e04ed041/Screenshot+2023-09-21+at+1.56.39+PM.png",
+            "https://as2.ftcdn.net/v2/jpg/05/74/75/15/1000_F_574751595_3qUW1cjNKg3Hyj2KfphfZcaeUYMr7nUt.jpg",
+            "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/177dae98-e0ca-48c0-ab09-fd5c2e0e8bcc/17bb770a-498d-418f-80f5-8d298e3d2d6a.png",
+            "https://images.nightcafe.studio/jobs/OLcMa9jFb1ZZR9arYe2q/OLcMa9jFb1ZZR9arYe2q--5--qgapt_7.8125x.jpg?tr=w-1600,c-at_max",
+            "https://cdn.pixabay.com/photo/2023/01/08/22/11/ai-generated-7706233_1280.jpg"
+
+
+
+            ];
+          
+            document.addEventListener('DOMContentLoaded', () => {
+              [...document.getElementsByClassName('randCat')].forEach(e => {
+                const randImageIndex = ~~(Math.random() * catImages.length);
+                e.src = catImages[randImageIndex];
+              }); 
+            });
+          </script>

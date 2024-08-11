@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-light fixed-top bg-lightColor">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-darkColor d-flex align-items-center" href="/home">           
+                <img id="logo" src="https://upload.wikimedia.org/wikipedia/en/f/fb/Snowy_%28character%29.png" alt="music image" width="45" height="" class="me-2">
+                Wilson & Paw
+            </a>
+            <div id="time" class="nav-item justify-content-between"onload="getCurrentDate();">
+                
+            </div>
+            <button class="navbar-toggler ms-auto d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start bg-lightColor d-md-none" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-mainColor" id="sidebarLabel">Sidebar</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <% if (user) { %>
+                    <a href="/logout">Logout</a>
+                <% } else { %>
+                    <a href="/register">Register</a>
+                    <a href="/login">Login</a>
+                <% } %>
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/home">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/petGiveaway">Pet Giveaway</a></li>
+
+                <!-- <li class="nav-item"><a class="nav-link text-darkColor" href="/browse">Browse</a></li> -->
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/find">Find a dog/cat</a></li>
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/dogCare">Dog Care</a></li>
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/catCare">Cat Care</a></li>
+                <li class="nav-item"><a class="nav-link text-darkColor" href="/contact">Contact us</a></li>
+                <% if (user) { %>
+                    <li class="nav-item"><a class="nav-link text-darkColor" href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li class="nav-item"><a class="nav-link text-darkColor" href="/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link text-darkColor" href="/login">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-darkColor">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-none d-md-block bg-lightColor sidebar mt-5 pt-5">
+                <div class="position-fixed ">
+                    <div class="pt-3">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span class="text-lightColor">Main Menu</span>
+                        </h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/petGiveaway">Pet Giveaway</a></li>
+
+                            <!-- <li class="nav-item"><a class="nav-link text-darkColor" href="/browse">Browse</a></li> -->
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/find">Find a dog/cat</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/dogCare">Dog Care</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/catCare">Cat Care</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/contact">Contact us</a></li>
+                            <% if (user) { %>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/logout">Logout</a></li>
+                            <% } else { %>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/register">Register</a></li>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/login">Login</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            

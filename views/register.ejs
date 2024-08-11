@@ -1,0 +1,90 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-0 px-0 mb-0 pt-4 mt-5">
+    <div class="px-5 py-5 my-5 mx-5 text-center">
+        <form id="registerForm" class="form-signin my-5" action="/register" method="POST">
+            <img class ="my-5" id="logo" src="https://upload.wikimedia.org/wikipedia/en/f/fb/Snowy_%28character%29.png" alt="music image" width="45" height="" class="me-2">
+            Wilson & Paw    
+            
+            <h1 class="h3 mb-3 font-weight-normal">Please Register!!!</h1>
+            <label for="inputEmail" class="sr-only">Input Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="password"  name="password" class="form-control" placeholder="Password" required="">
+            <div id="error-message" style="color:darkred; margin-top: 10px;"></div>
+        
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign UPP</button>
+        </form>
+        
+    </div>
+    <div class="px-5 py-5 my-5 mx-5 text-center"></div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+    
+            const errorMessage = document.getElementById('error-message');
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Validate username format before checking with the server
+            const usernamePattern = /^[A-Za-z0-9]+$/;
+            if (!usernamePattern.test(username)) {
+                errorMessage.textContent = 'Username can only contain letters and digits.';
+                return; // Stop execution and don't proceed with the fetch request
+            }
+    
+            // Check if the username already exists
+            fetch('/check-username', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({ username }).toString(),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    errorMessage.textContent = 'Username already exists.';
+                    return; // Stop execution and don't proceed with the fetch request
+                }
+    
+                // Validate password only after confirming username doesn't exist
+                const passwordPattern = /^[A-Za-z0-9]{4,}$/;
+                const hasLetter = /[A-Za-z]/.test(password);
+                const hasDigit = /\d/.test(password);
+    
+                if (!passwordPattern.test(password) || !hasLetter || !hasDigit) {
+                    errorMessage.textContent = 'Password must be at least 4 characters long, contain only letters and digits, and include at least one letter and one digit.';
+                    return; // Stop execution and don't proceed with the fetch request
+                }
+    
+                // Submit the form if all validations pass
+                const formData = new URLSearchParams(new FormData(document.getElementById('registerForm'))).toString();
+    
+                fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.success) {
+                        errorMessage.textContent = data.message;
+                    } else {
+                        // Redirect to the success page with newUser set to true
+                        window.location.href = '/success?newUser=true';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    errorMessage.textContent = 'An error occurred. Please try again.';
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorMessage.textContent = 'An error occurred. Please try again.';
+            });
+    
+        });
+    </script>

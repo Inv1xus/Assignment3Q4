@@ -1,0 +1,12 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-0 px-0 mb-0 pt-4 mt-5">
+    <div class="px-5 py-5 my-5 mx-5 text-center">
+        <% if (newUser) { %>
+            <h1>Registration Successful!</h1>
+        <% } else { %>
+            <h1>Login Successful!</h1>
+        <% } %>
+        <p>Welcome, <%= user %>! You are now <%= newUser ? 'registered' : 'logged in' %>.</p>
+        <a href="/petGiveaway" class="btn btn-primary">Go to Pet Giveaway Page</a>
+    </div>
+
+    <div class="my-5 py-5"></div>
