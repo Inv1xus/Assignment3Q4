@@ -30,28 +30,22 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="nav flex-column">
-                <% if (user) { %>
-                    <a href="/logout">Logout</a>
-                <% } else { %>
-                    <a href="/register">Register</a>
-                    <a href="/login">Login</a>
-                <% } %>
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/home">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/petGiveaway">Pet Giveaway</a></li>
+<ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/petGiveaway">Pet Giveaway</a></li>
 
-                <!-- <li class="nav-item"><a class="nav-link text-darkColor" href="/browse">Browse</a></li> -->
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/find">Find a dog/cat</a></li>
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/dogCare">Dog Care</a></li>
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/catCare">Cat Care</a></li>
-                <li class="nav-item"><a class="nav-link text-darkColor" href="/contact">Contact us</a></li>
-                <% if (user) { %>
-                    <li class="nav-item"><a class="nav-link text-darkColor" href="/logout">Logout</a></li>
-                <% } else { %>
-                    <li class="nav-item"><a class="nav-link text-darkColor" href="/register">Register</a></li>
-                    <li class="nav-item"><a class="nav-link text-darkColor" href="/login">Login</a></li>
-                <% } %>
-            </ul>
+                            <!-- <li class="nav-item"><a class="nav-link text-darkColor" href="/browse">Browse</a></li> -->
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/find">Find a dog/cat</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/dogCare">Dog Care</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/catCare">Cat Care</a></li>
+                            <li class="nav-item"><a class="nav-link text-darkColor" href="/contact">Contact us</a></li>
+                            <% if (user) { %>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/logout">Logout</a></li>
+                            <% } else { %>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/register">Register</a></li>
+                                <li class="nav-item"><a class="nav-link text-darkColor" href="/login">Login</a></li>
+                            <% } %>
+                        </ul>
         </div>
     </div>
 
